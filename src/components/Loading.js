@@ -1,8 +1,8 @@
-import { ProgressBar } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 
 const Loading = () => {
  return(
-    <ProgressBar animation="border" variant="success" />
+    <Spinner animation="border" variant="primary" />
  )
 };
 

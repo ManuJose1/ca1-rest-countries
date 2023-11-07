@@ -18,7 +18,7 @@ const SingleCountry = () => {
         setCountry(response.data[0]);
       })
       .catch((error) => {
-        error.log(error);
+        console.log(error);
       });
   }, []);
 
@@ -29,35 +29,40 @@ const SingleCountry = () => {
         setWeather(r.data);
       })
       .catch((error) => {
-        error.log(error);
+        console.log(error);
       });
   }, []);
 
-  if (!country) {
+  if (!country && !weather) {
     return <Loading />;
   }
 
   return (
     <>
+      <h1 className="text-center">{country.name.official}</h1>
       <Container>
-            <p>{country.name.common}</p>
-            <p>{Object.values(country.currencies)[0].name}</p>
-      </Container>
-      <h1 className='text-center'>{country.name.official}</h1>
-      <Card>
-        <Card.Img variant="top" src={country.flags.svg} />
-        <Card.Body>
-          <Card.Title>Common name: <b>{country.name.common}</b></Card.Title>
-          <Card.Text>
-                Currency: {Object.values(country.currencies)[0].name} {Object.values(country.currencies)[0].symbol}
-          </Card.Text>
-        </Card.Body>
+        <Row>
+          <Col>
+            <Image variant="left" src={country.flags.svg} alt={country.flags.alt} fluid />
+          </Col>
+          <Col xs={6}>
+           <h3> Common name: <b>{country.name.common}</b></h3>
+           <h3> Currency: <b>{Object.values(country.currencies)[0].name}</b> | Symbol: <b>{Object.values(country.currencies)[0].symbol}</b></h3>
+           <h3> Region: <b>{country.region}</b></h3>
+           <h3> Capital City: <b>{country.capital}</b></h3>
+            
+          </Col>
+        </Row>
+        
         <ListGroup className="list-group-flush">
-          <ListGroup.Item>Cras justo odio</ListGroup.Item>
-          <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-          <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+          <h3>
+            Weather
+          <ListGroup.Item>Temperature: {weather.temperature}</ListGroup.Item>
+          <ListGroup.Item>Wind Speed: {weather.wind}</ListGroup.Item>
+          <ListGroup.Item>Description: {weather.description}</ListGroup.Item>
+          </h3>
         </ListGroup>
-      </Card>
+      </Container>
     </>
   );
 };
