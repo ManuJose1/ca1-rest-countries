@@ -22,13 +22,13 @@ const MyNavbar = (props) => {
   };
 
   const handleInputChange = (e) => {
-    navigate('/');
+    navigate("/");
     props.onHandleChange(e);
   };
 
   return (
     <>
-      <Navbar expand="lg" className="bg-dark" class='my-nav'>
+      <Navbar expand="lg" className="bg-dark" variant="dark" class="my-nav">
         <Container>
           <Navbar.Brand href="#home">RestCountries</Navbar.Brand>
 
@@ -40,7 +40,7 @@ const MyNavbar = (props) => {
             title="Region"
             onSelect={handleRegion}
             variant="secondary"
-            className='mx-5'
+            className="mx-5"
           >
             <Dropdown.Item eventKey="all">All</Dropdown.Item>
             <Dropdown.Item eventKey="Americas">Americas</Dropdown.Item>
@@ -59,9 +59,6 @@ const MyNavbar = (props) => {
                   onChange={handleInputChange}
                   value={props.searchTerm}
                 />
-              </Col>
-              <Col xs="auto">
-                <Button type="submit">Submit</Button>
               </Col>
             </Row>
           </Form>

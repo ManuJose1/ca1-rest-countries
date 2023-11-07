@@ -65,9 +65,8 @@ const Home = (props) => {
 
   return (
     <>
-    <h1 >All Countries</h1>
-    <hr/>
-      <Row className="" md={3} xs={1}>
+    <h1 className='text-center' >All Countries</h1>
+      <Row className="g-4" style={{justifyContent:"center"}} md={4} xs={2}>
         {countriesList.length > 0 ? countryCards : <Loading />}
       </Row>
     </>
