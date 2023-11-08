@@ -30,7 +30,7 @@ const onHandleRegion = (selected) => {
     <>
       <Router>
       <MyNavbar onHandleRegion={onHandleRegion} onHandleChange={onHandleChange} searchTerm={searchTerm}/>
-        <Container>
+        <Container className=''>
           <Row>
             <Col>
               <Routes>

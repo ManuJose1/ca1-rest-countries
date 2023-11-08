@@ -22,25 +22,26 @@ const SingleCountry = () => {
       });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://goweather.herokuapp.com/weather/${name}`)
-      .then((r) => {
-        setWeather(r.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://api.open-meteo.com/v1/forecast?latitude=${country.latlng[0]}&longitude=${country.latlng[1]}&hourly=temperature_2m,precipitation_probability&timezone=auto&forecast_days=1`)
+  //     .then((r) => {
+  //       console.log(r);
+  //      // setWeather(r.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
-  if (!country && !weather) {
+  if (!country) {
     return <Loading />;
   }
 
   return (
     <>
       <h1 className="text-center">{country.name.official}</h1>
-      <Container>
+      <Container className='bg-dark text-white p-5'>
         <Row>
           <Col>
             <Image variant="left" src={country.flags.svg} alt={country.flags.alt} fluid />
@@ -54,14 +55,14 @@ const SingleCountry = () => {
           </Col>
         </Row>
         
-        <ListGroup className="list-group-flush">
+        {/* <ListGroup className="list-group-flush">
           <h3>
             Weather
           <ListGroup.Item>Temperature: {weather.temperature}</ListGroup.Item>
           <ListGroup.Item>Wind Speed: {weather.wind}</ListGroup.Item>
-          <ListGroup.Item>Description: {weather.description}</ListGroup.Item>
+          <ListGroup.Item>Description: {weather.description}</ListGroup.Item> 
           </h3>
-        </ListGroup>
+        </ListGroup> */}
       </Container>
     </>
   );

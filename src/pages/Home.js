@@ -59,6 +59,7 @@ const Home = (props) => {
           name={country.name.common}
           region={country.region}
         />
+        
       </>
     );
   });
@@ -69,6 +70,7 @@ const Home = (props) => {
       <Row className="g-4" style={{justifyContent:"center"}} md={4} xs={2}>
         {countriesList.length > 0 ? countryCards : <Loading />}
       </Row>
+
     </>
   );
 };
