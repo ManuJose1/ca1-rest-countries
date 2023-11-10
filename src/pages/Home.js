@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import {Row} from "react-bootstrap";
 
 import CountryCard from "../components/CountryCard";
 import Loading from "../components/Loading";
@@ -67,6 +67,7 @@ const Home = (props) => {
   return (
     <>
     <h1 className='text-center' >All Countries</h1>
+    <hr/>
       <Row className="g-4" style={{justifyContent:"center"}} md={4} xs={2}>
         {countriesList.length > 0 ? countryCards : <Loading />}
       </Row>

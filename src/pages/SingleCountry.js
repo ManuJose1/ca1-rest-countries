@@ -16,15 +16,17 @@ const SingleCountry = () => {
       .get(`https://restcountries.com/v3.1/name/${name}`)
       .then((response) => {
         setCountry(response.data[0]);
+        console.log(name);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
 
+  // Weather API call. It ket giving error 503 so I decided to keep it out of the final app.
   // useEffect(() => {
   //   axios
-  //     .get(`https://api.open-meteo.com/v1/forecast?latitude=${country.latlng[0]}&longitude=${country.latlng[1]}&hourly=temperature_2m,precipitation_probability&timezone=auto&forecast_days=1`)
+  //     .get(`https://goweather.herokuapp.com/weather/${name}`)
   //     .then((r) => {
   //       console.log(r);
   //      // setWeather(r.data);
@@ -55,6 +57,7 @@ const SingleCountry = () => {
           </Col>
         </Row>
         
+     {/* Front-end for weather data */}
         {/* <ListGroup className="list-group-flush">
           <h3>
             Weather
