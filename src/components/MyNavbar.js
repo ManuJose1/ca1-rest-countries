@@ -42,7 +42,7 @@ const MyNavbar = (props) => {
             variant="secondary"
             className="mx-5"
           >
-            <Dropdown.Item eventKey="all">All</Dropdown.Item>
+            <Dropdown.Item eventKey="All">All Countries</Dropdown.Item>
             <Dropdown.Item eventKey="Americas">Americas</Dropdown.Item>
             <Dropdown.Item eventKey="Oceania">Oceania</Dropdown.Item>
             <Dropdown.Item eventKey="Asia">Asia</Dropdown.Item>

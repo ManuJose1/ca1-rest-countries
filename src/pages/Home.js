@@ -25,7 +25,7 @@ const Home = (props) => {
 
   //Filter by Region
   useEffect(() => {
-    if (props.selectedRegion === "all" || props.selectedRegion === "") {
+    if (props.selectedRegion === "All" || props.selectedRegion === "") {
       setFilteredCountries(countriesList);
     } else {
       let filter = countriesList.filter((country) => {
@@ -66,7 +66,7 @@ const Home = (props) => {
 
   return (
     <>
-    <h1 className='text-center' >All Countries</h1>
+    <h1 className='text-center' >{props.selectedRegion}</h1>
     <hr/>
       <Row className="g-4" style={{justifyContent:"center"}} md={4} xs={2}>
         {countriesList.length > 0 ? countryCards : <Loading />}

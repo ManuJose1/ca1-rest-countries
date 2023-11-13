@@ -5,7 +5,7 @@ const CountryCard = (props) => {
   return (
     <>
     <div>
-      <h3 className='text-center'>{props.name}</h3>
+      <b><p className='text-center'>{props.name}</p></b>
       <Card className='m-3 text-white' style={{ backgroundImage: `url(${props.flag})` }}>
         <Card.Body className="text-center my-5">
           <div>
